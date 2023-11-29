@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main(void) {
+  float float1;
+  char *puntero = (char *) &float1;
+  float1 = 13.25; //flotante con valor especifico
+ 
+  printf("%.2x",*(puntero+3));
+  printf("%.2x",*(puntero+2)); //%.2x imprime 2 digitos, cada byte en hexa 
+  printf("%.2x",*(puntero+1));//+1 representa el byte que sigue
+  printf("%.2x",*(puntero));
+
+  return 0;
+}
