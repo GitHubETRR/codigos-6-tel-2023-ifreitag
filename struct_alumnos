@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+#define VECTOR 10
+
+struct alumnos {
+  unsigned char Id;
+  char Nombre[VECTOR];
+  char Apellido[VECTOR];
+  unsigned char Edad;
+  unsigned char Curso;
+  char Especialidad[VECTOR];
+} alumno1, alumno2; // estructura general
+
+struct alumnos crearAlumno (struct alumnos, unsigned char);
+void mostrarAlumno (struct alumnos); //prototipo de la funcion
+
+int main(void) {
+  
+  alumno1 = crearAlumno(alumno1, 1); //manda a la funcion
+  alumno2 = crearAlumno(alumno2, 2);
+
+  mostrarAlumno(alumno1); //manda a la funcion
+  mostrarAlumno(alumno2); //manda a la funcion
+  return 0;
+}
+
+struct alumnos crearAlumno (struct alumnos alumno, unsigned char id){ //devuelve estructura, pide alumno, nos dara alumno1 o alumno2 y el valor char de 1 o 2
+  alumno.Id = id; //id representa valor de alumno en la estructura
+
+
+  //ingreso de datos
+  printf("Ingese datos del alumno %d\n",id);
+  printf("Ingrese su Nombre:\n");
+  scanf("%s",alumno.Nombre);
+  printf("Ingrese su Apellido:\n");
+  scanf("%s",alumno.Apellido);
+  printf("Ingrese su edad:\n");
+  scanf("%d",&alumno.Edad);
+  printf("Ingrese en que grado está:\n");
+  scanf("%d",&alumno.Curso);
+  printf("Ingrese su especialidad\n");
+  scanf("%s",alumno.Especialidad);
+  return alumno; //funcion 1
+}
+
+
+void mostrarAlumno (struct alumnos alumno){
+
+  //retirada de datos
+  printf("Id:%d \n Nombre:%s\n Apellido:%s\n Edad:%d\n Curso:%d\n Especialidad: %s\n",alumno.Id,alumno.Nombre,alumno.Apellido,alumno.Edad,alumno.Curso,alumno.Especialidad);
+  //funcion 2
+}
