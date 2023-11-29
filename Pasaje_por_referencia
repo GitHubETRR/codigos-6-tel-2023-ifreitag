@@ -1,0 +1,18 @@
+#include <stdio.h>
+
+void modificar(int*);//creo funcion para aceptar puntero entero
+
+int main() {
+  int miVariable = 0;
+  printf("Elija un valor para la variable: ");
+  scanf("%d", &miVariable);  //&direccion de memoria
+
+  modificar(&miVariable);//va a la funcion
+  printf("El valor de la variable es: %d\n", miVariable);
+  return 0;
+}
+
+
+void modificar(int *num) {
+ *num = *num+1;//se modifica el lugar de memoria
+}
