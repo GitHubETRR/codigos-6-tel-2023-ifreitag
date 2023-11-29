@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+union IEEE_754 {
+  struct {
+    unsigned int mantisa : 23;
+    unsigned int exponente : 8;
+    unsigned int signo : 1;
+  } campos; 
+  float numero;
+};
+
+int main(void) {
+  union IEEE_754 pasaje;
+
+  printf("Ingrese un número con coma: ");
+  scanf("%f", &pasaje.numero);
+
+  printf("El signo es: %x\n", pasaje.campos.signo);
+  printf("El exponente es: %.2x\n", pasaje.campos.exponente);
+  printf("La mantisa es: %.2x\n", pasaje.campos.mantisa);
+
+  printf("Completo: 0x%X", pasaje.campos);
+
+  return 0;
+}
